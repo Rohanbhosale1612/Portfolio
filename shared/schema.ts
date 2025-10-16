@@ -1,18 +1,36 @@
-import { sql } from "drizzle-orm";
-import { pgTable, text, varchar } from "drizzle-orm/pg-core";
-import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
-export const users = pgTable("users", {
-  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
-  username: text("username").notNull().unique(),
-  password: text("password").notNull(),
+// Lead submission schema
+export const insertLeadSchema = z.object({
+  name: z.string().min(1, "Name is required"),
+  email: z.string().email("Valid email is required"),
+  message: z.string().min(10, "Message must be at least 10 characters"),
+  services: z.array(z.string()).min(1, "Please select at least one service"),
+  contact_me_by_fax: z.string().max(0, "Invalid submission"), // honeypot field
 });
 
-export const insertUserSchema = createInsertSchema(users).pick({
-  username: true,
-  password: true,
+export const leadSchema = insertLeadSchema.extend({
+  id: z.string(),
+  timestamp: z.string(),
+  maskedIp: z.string(),
 });
 
-export type InsertUser = z.infer<typeof insertUserSchema>;
-export type User = typeof users.$inferSelect;
+export type InsertLead = z.infer<typeof insertLeadSchema>;
+export type Lead = z.infer<typeof leadSchema>;
+
+// Service type for pricing cards
+export interface Service {
+  id: string;
+  title: string;
+  scope: string[];
+  price: string;
+  turnaround: string;
+}
+
+// Project type
+export interface Project {
+  id: string;
+  title: string;
+  description: string;
+  technologies: string[];
+}

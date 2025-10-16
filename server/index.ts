@@ -1,8 +1,33 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
+import helmet from "helmet";
+import cors from "cors";
 
 const app = express();
+
+// Security middleware
+app.use(helmet({
+  contentSecurityPolicy: false, // Disable for development
+}));
+
+// CORS configuration - allow all origins in development
+if (app.get("env") === "development") {
+  app.use(cors({
+    origin: true,
+    credentials: true,
+  }));
+} else {
+  const allowedOrigins = process.env.APP_ORIGIN 
+    ? [process.env.APP_ORIGIN] 
+    : [];
+  
+  app.use(cors({
+    origin: allowedOrigins,
+    credentials: true,
+  }));
+}
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
