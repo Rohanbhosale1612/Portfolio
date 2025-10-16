@@ -1,0 +1,101 @@
+UI MOODBOARD & VISUAL INSPIRATION — “RBH: Premium Salesforce Developer”
+
+Essence / One-line brief
+Calm, confident, modern — a premium dark portfolio that communicates technical authority and approachability. Think “SaaS design polish + enterprise trust”.
+
+Keywords (for style + search)
+Glassmorphism, soft-glow gradients, indigo accent, spacious layout, micro-interactions, modern minimalism, accessible typography, SVG iconography.
+
+Color Palette
+
+Primary background: Deep navy / slate (#071021 or #0f172a)
+
+Surface cards: Soft translucent (rgba white with low opacity)
+
+Accent: Indigo / violet (#6366F1)
+
+Secondary accent: Sky blue (#0ea5e9)
+
+Text: Off-white (#F8FAFC)
+
+Muted text: Cool gray (#94A3B8)
+
+Error: Pink/rose (#F472B6)
+
+Success: Green (#34D399)
+
+Typography
+
+Headline: Inter / Poppins / Outfit — bold, large, high contrast
+
+Body: Inter / Roboto — medium weight, generous line-height
+
+Sizes: hero ≥40–48px desktop, section headings 20–28px, body 16px
+
+Letter spacing: slight tracking for small uppercase labels
+
+Layout & Grid
+
+Max content width: ~1150–1300px
+
+Modular card grid: 12-column base, breakpoints at 640/768/1024
+
+Spacing rhythm: 24 / 16 / 12 px scales, large leading in hero
+
+Responsive rules: 1 column mobile → 2 columns ≥768px → 3-4 columns for icon grids
+
+Surface & Texture
+
+Cards: glassmorphism — translucent background, subtle border (1px rgba), soft shadow, 12–16px border-radius
+
+Background: layered blurs — soft circular radial gradients (indigo → cyan) with very low opacity
+
+Decorative elements: blurred “blobs” behind hero, subtle animated pulse on primary CTA
+
+Icons & Imagery
+
+Use SVG icons only — Heroicons / Lucide / Feather
+
+Icon style: 1.6–2.0 stroke, monochrome with accent fills on hover
+
+No stock photos required; if portrait needed use simple vector avatar or outline illustration
+
+Micro-interactions
+
+Buttons: raised on hover (translateY -2 to -4px + shadow), subtle color shift
+
+Cards: lift + border-glow on hover; small delay and easing
+
+Inputs: focus ring using accent color, smooth transition
+
+Success: inline banner with check emoji + fade in / out (4s)
+
+Accessibility
+
+WCAG AA contrast for text
+
+Focus states for keyboard users
+
+Labels associated with inputs; aria-live for success messages
+
+Tone & Copy
+
+Friendly, confident, direct: “Results-driven Salesforce Developer…”
+
+Use short sentences and bulleted skill lists
+
+CTAs: “Contact Me”, “Request Quote”, “View Projects”
+
+Pricing: transparent, with footnote “Final quote confirmed after discovery call”
+
+Visual Inspiration Links (for designers)
+
+Glass/blur cards: Apple Music UI / Neumorphism examples
+
+SaaS hero gradients: Linear gradients from Figma community (search “SaaS hero gradient”)
+
+Icon aesthetic: Heroicons.com (outline set)
+
+Layout/spacing: Stripe and Vercel marketing pages (minimal, spacious)
+
+Micro-interaction reference: Dribbble: “subtle hover lift” / “soft shadows”
